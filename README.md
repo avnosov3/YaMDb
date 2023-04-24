@@ -16,18 +16,17 @@
 * docker 20.10.16
 * docker-compose 3.8
 
-## Как запустить проект
+## Запуск проекта
 
-Клонировать репозиторий и перейти в него в командной строке:
-
+1. Клонировать репозиторий
 ```
 git@github.com:avnosov3/infra_sp2.git
 ```
-
+2. Перейти в папку с проектом
 ```
 cd infra
 ```
-Используем docker-compose, делаем миграции, создаём юзера, собираем статику:
+3. Используем docker-compose, делаем миграции, создаём юзера, собираем статику
 ```
 docker-compose up -d --build 
 docker-compose exec web python manage.py migrate
