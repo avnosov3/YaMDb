@@ -20,11 +20,11 @@
 
 1. Клонировать репозиторий
 ```
-git@github.com:avnosov3/infra_sp2.git
+git@github.com:avnosov3/YaMDb.git
 ```
 2. Перейти в папку с проектом
 ```
-cd infra
+cd YaMDb
 ```
 3. Запустить docker-compose
 ```
