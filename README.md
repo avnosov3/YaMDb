@@ -2,7 +2,7 @@
 
 Проект YaMDb [(документация API)](https://beerdrink.pythonanywhere.com/redoc/) собирает отзывы пользователей на произведения.
 Произведения делятся на категории, такие как «Книги», «Фильмы», «Музыка».
-Список категорий может быть расширен (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
+Список категорий может быть расширен (например, можно добавить категорию «Изобразительное искусство»).
 Произведению может быть присвоен жанр из списка предустановленных (например, «Сказка», «Рок» или «Артхаус»). 
 
 ## Техно-стек
@@ -26,13 +26,24 @@ git@github.com:avnosov3/infra_sp2.git
 ```
 cd infra
 ```
-3. Используем docker-compose, делаем миграции, создаём юзера, собираем статику
+3. Запустить docker-compose
 ```
-docker-compose up -d --build 
+docker-compose up -d --build
+```
+4. Применить миграции
+```
 docker-compose exec web python manage.py migrate
+```
+5. Создать супер-юзера
+```
 docker-compose exec web python manage.py createsuperuser
+```
+6. Собрать статику
+```
 docker-compose exec web python manage.py collectstatic --no-input
-Заполнить БД
+```
+7. Заполнить БД
+```
 docker-compose exec web python manage.py csv
 ```
 
