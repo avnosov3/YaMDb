@@ -1,12 +1,9 @@
-# [API_YAMDB]((https://beerdrink.pythonanywhere.com/redoc/))
+# [API_YAMDB](https://beerdrink.pythonanywhere.com/redoc/)
 
-Проект YaMDb собирает отзывы пользователей на произведения.
+Проект YaMDb [(документация)](https://beerdrink.pythonanywhere.com/redoc/) собирает отзывы пользователей на произведения.
 Произведения делятся на категории, такие как «Книги», «Фильмы», «Музыка».
 Список категорий может быть расширен (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
-Произведению может быть присвоен жанр из списка предустановленных (например, «Сказка», «Рок» или «Артхаус»).
-
-## Redoc
-[Redoc](https://beerdrink.pythonanywhere.com/redoc/)
+Произведению может быть присвоен жанр из списка предустановленных (например, «Сказка», «Рок» или «Артхаус»). 
 
 ## Техно-стек
 * python 3.7.9
@@ -30,9 +27,7 @@ git@github.com:avnosov3/infra_sp2.git
 ```
 cd infra
 ```
-
-Используем Docker, делаем миграции, создаём юзера, собираем статику:
-
+Используем docker-compose, делаем миграции, создаём юзера, собираем статику:
 ```
 docker-compose up -d --build 
 docker-compose exec web python manage.py migrate
@@ -41,7 +36,6 @@ docker-compose exec web python manage.py collectstatic --no-input
 Заполнить БД
 docker-compose exec web python manage.py csv
 ```
-
 
 ## Проект делали
 * [Носов Артём](https://github.com/avnosov3)
