@@ -26,23 +26,38 @@ git@github.com:avnosov3/YaMDb.git
 ```
 cd YaMDb
 ```
-3. Запустить docker-compose
+3. Создать файл .env в папке infra
+```
+cd infra
+```
+```
+SECRET_KEY=<указать секретный ключ>
+DEBUG=True (если запуск в боевом режиме, то необходимо удалить пермеенную)
+
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=<Указать название БД>
+POSTGRES_USER=<Указать имя пользователя>
+POSTGRES_PASSWORD=<Указать пароль пользователя>
+DB_HOST=127.0.0.1
+DB_PORT=<Указать порт для подключения к базе>
+``` 
+4. Запустить docker-compose
 ```
 docker-compose up -d --build
 ```
-4. Применить миграции
+5. Применить миграции
 ```
 docker-compose exec web python manage.py migrate
 ```
-5. Создать супер-юзера
+6. Создать супер-юзера
 ```
 docker-compose exec web python manage.py createsuperuser
 ```
-6. Собрать статику
+7. Собрать статику
 ```
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-7. Заполнить БД
+8. Заполнить БД
 ```
 docker-compose exec web python manage.py csv
 ```
