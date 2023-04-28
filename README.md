@@ -41,23 +41,24 @@ POSTGRES_PASSWORD=<Указать пароль пользователя>
 DB_HOST=127.0.0.1
 DB_PORT=<Указать порт для подключения к базе>
 ``` 
-4. Запустить docker-compose
+4. Подключить ssl по [инструкции](https://pentacent.medium.com/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71)
+5. Запустить docker-compose
 ```
 docker-compose up -d --build
 ```
-5. Применить миграции
+6. Применить миграции
 ```
 docker-compose exec web python manage.py migrate
 ```
-6. Создать супер-юзера
+7. Создать супер-юзера
 ```
 docker-compose exec web python manage.py createsuperuser
 ```
-7. Собрать статику
+8. Собрать статику
 ```
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-8. Заполнить БД
+9. Заполнить БД
 ```
 docker-compose exec web python manage.py csv
 ```
