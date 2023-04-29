@@ -1,4 +1,4 @@
-# [API_YAMDB](https://beerdrink.pythonanywhere.com/redoc/)
+# [API YAMDB](https://beerdrink.pythonanywhere.com/redoc/)
 
 Проект YaMDb [(документация API)](https://beerdrink.pythonanywhere.com/redoc/) собирает отзывы пользователей на произведения.
 Произведения делятся на категории, такие как «Книги», «Фильмы», «Музыка».
