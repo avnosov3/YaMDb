@@ -32,33 +32,32 @@ cd infra
 ```
 ```
 SECRET_KEY=<указать секретный ключ>
-DEBUG=True (если запуск в боевом режиме, то необходимо удалить пермеенную)
+DEBUG=True (если запуск в боевом режиме, то необходимо удалить переменную)
 
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=<Указать название БД>
 POSTGRES_USER=<Указать имя пользователя>
 POSTGRES_PASSWORD=<Указать пароль пользователя>
-DB_HOST=127.0.0.1
+DB_HOST=db
 DB_PORT=<Указать порт для подключения к базе>
 ``` 
-4. Подключить ssl по [инструкции](https://pentacent.medium.com/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71)
-5. Запустить docker-compose
+4. Запустить docker-compose
 ```
 docker-compose up -d --build
 ```
-6. Применить миграции
+5. Создать миграции
 ```
 docker-compose exec web python manage.py migrate
 ```
-7. Создать супер-юзера
+6. Создать супер-юзера
 ```
 docker-compose exec web python manage.py createsuperuser
 ```
-8. Собрать статику
+7. Собрать статику
 ```
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-9. Заполнить БД
+8. Заполнить БД
 ```
 docker-compose exec web python manage.py csv
 ```
