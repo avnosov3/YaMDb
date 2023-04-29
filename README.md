@@ -35,7 +35,7 @@ SECRET_KEY=<указать секретный ключ>
 DEBUG=True (если запуск в боевом режиме, то необходимо удалить переменную)
 
 DB_ENGINE=django.db.backends.postgresql
-DB_NAME=<Указать название БД>
+DB_NAME=postgres
 POSTGRES_USER=<Указать имя пользователя>
 POSTGRES_PASSWORD=<Указать пароль пользователя>
 DB_HOST=db
