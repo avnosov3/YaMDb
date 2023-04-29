@@ -49,7 +49,7 @@ docker-compose up -d --build
 ```
 docker-compose exec web python manage.py migrate
 ```
-6. Создать супер-юзера
+6. Создать супер пользователя
 ```
 docker-compose exec web python manage.py createsuperuser
 ```
